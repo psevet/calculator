@@ -8,21 +8,41 @@ let num2 = document.getElementById("num2");
 let output = document.getElementById("output");
 
 plus.addEventListener("click", () => {
-   output.innerHTML = parseFloat(num1.value) + parseFloat(num2.value);
+   if (num1.value !== "" && num2.value !== "") {
+      output.innerHTML = parseFloat(num1.value) + parseFloat(num2.value);
+   } else {
+      alert("Enter second number");
+   }
 });
 
 minus.addEventListener("click", () => {
-   output.innerHTML = parseFloat(num1.value) - parseFloat(num2.value);
+   if (num1.value !== "" && num2.value !== "") {
+      output.innerHTML = parseFloat(num1.value) - parseFloat(num2.value);
+   } else {
+      alert("Enter second number");
+   }
 });
 
 multiply.addEventListener("click", () => {
-   output.innerHTML = parseFloat(num1.value) * parseFloat(num2.value);
+   if (num1.value !== "" && num2.value !== "") {
+      output.innerHTML = parseFloat(num1.value) * parseFloat(num2.value);
+   } else {
+      alert("Enter second number");
+   }
 });
 
 divide.addEventListener("click", () => {
-   output.innerHTML = parseFloat(num1.value) / parseFloat(num2.value);
+   if (num1.value !== "" && num2.value !== "") {
+      output.innerHTML = parseFloat(num1.value) / parseFloat(num2.value);
+   } else {
+      alert("Enter second number");
+   }
 });
 
 remainder.addEventListener("click", () => {
-   output.innerHTML = parseFloat(num1.value) % parseFloat(num2.value);
+   if (num1.value !== "" && num2.value !== "") {
+      output.innerHTML = parseFloat(num1.value) % parseFloat(num2.value);
+   } else {
+      alert("Enter second number");
+   }
 });
