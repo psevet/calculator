@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/psevet/calculator#readme",
   "devDependencies": {
-    "eslint": "^7.24.0"
+    "eslint": "^7.24.0",
+    "eslint-config-recommended": "^4.1.0"
   }
 }
