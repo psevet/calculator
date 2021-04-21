@@ -16,7 +16,7 @@
       } else {
          alert("Enter correct parameters");
       }
-   };
+   }
 
    plus.addEventListener("click", () => calculate('+'));
 
