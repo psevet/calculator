@@ -1,30 +1,67 @@
 (function () {
    "use strict";
 
-   let plus = document.getElementById("plus");
-   let minus = document.getElementById("minus");
-   let multiply = document.getElementById("multiply");
-   let divide = document.getElementById("divide");
-   let remainder = document.getElementById("remainder");
-   let num1 = document.getElementById("num1");
-   let num2 = document.getElementById("num2");
-   let output = document.getElementById("output");
+   const plus = document.getElementById("plus");
+   const minus = document.getElementById("minus");
+   const multiply = document.getElementById("multiply");
+   const divide = document.getElementById("divide");
+   const remainder = document.getElementById("remainder");
+   const m1read = document.getElementById("m1read");
+   const m1write = document.getElementById("m1write");
+   const m2read = document.getElementById("m2read");
+   const m2write = document.getElementById("m2write");
+   const num1 = document.getElementById("num1");
+   const num2 = document.getElementById("num2");
+   const output = document.getElementById("output");
+
+   function validate() {
+      return num1.value !== "" && num2.value !== "";
+   }
+
+   function add() {
+      return parseFloat(num1.value) + parseFloat(num2.value);
+   }
+
+   function sub() {
+      return num1.value - num2.value;
+   }
+
+   function mul() {
+      return num1.value * num2.value;
+   }
+
+   function div() {
+      return num1.value / num2.value;
+   }
+
+   function rem() {
+      return num1.value % num2.value;
+   }
 
    function calculate(operation) {
-      if (num1.value !== "" && num2.value !== "") {
-         output.innerHTML = (eval(`${num1.value} ${operation}  ${num2.value}`));
+      if (validate()) {
+         output.innerHTML = operation;
       } else {
-         alert("Enter correct parameters");
+         alert('Enter correct parameters')
       }
    }
 
-   plus.addEventListener("click", () => calculate('+'));
+   let m1 = 0;
+   m1write.addEventListener("click", () => m1 = num1.value);
+   m1read.addEventListener("click", () => num1.value = m1);
 
-   minus.addEventListener("click", () => calculate('-'));
+   let m2 = 0;
+   m2write.addEventListener("click", () => m2 = num2.value);
+   m2read.addEventListener("click", () => num2.value = m2);
 
-   multiply.addEventListener("click", () => calculate('*'));
 
-   divide.addEventListener("click", () => calculate('/'));
+   plus.addEventListener("click", () => calculate(add().toFixed(2)));
 
-   remainder.addEventListener("click", () => calculate('%'));
+   minus.addEventListener("click", () => calculate(sub().toFixed(2)));
+
+   multiply.addEventListener("click", () => calculate(mul().toFixed(2)));
+
+   divide.addEventListener("click", () => calculate(div().toFixed(2)));
+
+   remainder.addEventListener("click", () => calculate(rem().toFixed(2)));
 })()
